@@ -1,1 +1,11 @@
-XX
+This R code is used to scrape all tables included the Social Security Administration Trustees Report from years 2014 to 2022. I am currently working on expanding the scrape to earlier years. 
+Scraping the tables requires collection of a unique identifying table for each table. These vary across the years. This code consolidates all informaiton needed to scrape the tables into a single data frame, main_table, and scrapes all of the tables into a nested list, raw_data.
+
+It should be noted that this code directly scrapes the tables, regardless of whether the content has changed.
+             For example, in 2014, section VI.G (ESTIMATES FOR OASDI AND HI, SEPARATE AND COMBINED), contains 9 tables with G9 representing: OASDI and HI Annual Non-interest Income, Cost, and
+             Balance in Current Dollars, Calendar Years 2014-90. From 2015-2022, section VI.G contains 10 tables, 
+             with the 9th titled: OASDI and HI Annual Non-interest Income, Cost, and Balance in CPI-Indexed [insert year] Dollars, Calendar Years [insert year]-2100, 
+             and the 10th tititled: OASDI and HI Annual Non-interest Income, Cost, and Balance in Current Dollars, Calendar Years [insert year]-2100
+             [So in 2014, the 9th is in current dollars and there is no table for CPI-Index dollars. In years 2015-2022, the 9th is CPI-Indexed the 10th is current dollars.]
+The nested list contains the tables exactly as they are listed on the OASDI website. 
+
